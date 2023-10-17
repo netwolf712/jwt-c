@@ -6,8 +6,16 @@
 extern "C" {
 #endif
 
+/**
+ * @brief 返回值：失败
+ */
 #define RTN_ERROR 0
+
+/**
+ * @brief 返回值：成功
+ */
 #define RTN_SUCCESS 1
+
 /**
  * @brief 生成jwt
  * 
@@ -24,8 +32,8 @@ void get_jwt_token(char* username,char* psk,char* szJwt);
  * @param szJwt jwt
  * @param username 返回的用户名
  * @param expireTime 超时时间
- * @return true 校验通过
- * @return false 校验不通过
+ * @return RTN_SUCCESS 校验通过
+ * @return RTN_ERROR 校验不通过
  */
 int verify_jwt_token(char* psk,char* szJwt,char* username,long expireTime);
 #ifdef __cplusplus
